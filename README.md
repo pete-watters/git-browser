@@ -3,6 +3,13 @@
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
 
+## Development notes
+'app/adapters/application.js' points to the github API host. 
+Github is not JSON API compliant so the REST adapter is used.
+
+
+
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
