@@ -4,5 +4,6 @@
 <ul>
     {{#each model.repositories as |repo|}}
         <li>{{repo.fullName}} ({{repo.language}}, {{repo.stargazersCount}} stars)</li>
+        <button {{action 'star' repo}}>Star!</button>
     {{/each}}
 </ul>
