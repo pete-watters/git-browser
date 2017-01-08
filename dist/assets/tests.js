@@ -1,6 +1,6 @@
 'use strict';
 
-define('ember-scaffold/tests/app.jshint.lint-test', ['exports'], function (exports) {
+define('git-browser/tests/app.jshint.lint-test', ['exports'], function (exports) {
   'use strict';
 
   QUnit.module('JSHint | app.js');
@@ -9,14 +9,14 @@ define('ember-scaffold/tests/app.jshint.lint-test', ['exports'], function (expor
     assert.ok(true, 'app.js should pass jshint.');
   });
 });
-define('ember-scaffold/tests/helpers/destroy-app', ['exports', 'ember'], function (exports, _ember) {
+define('git-browser/tests/helpers/destroy-app', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = destroyApp;
 
   function destroyApp(application) {
     _ember['default'].run(application, 'destroy');
   }
 });
-define('ember-scaffold/tests/helpers/destroy-app.jshint.lint-test', ['exports'], function (exports) {
+define('git-browser/tests/helpers/destroy-app.jshint.lint-test', ['exports'], function (exports) {
   'use strict';
 
   QUnit.module('JSHint | helpers/destroy-app.js');
@@ -25,7 +25,7 @@ define('ember-scaffold/tests/helpers/destroy-app.jshint.lint-test', ['exports'],
     assert.ok(true, 'helpers/destroy-app.js should pass jshint.');
   });
 });
-define('ember-scaffold/tests/helpers/module-for-acceptance', ['exports', 'qunit', 'ember', 'ember-scaffold/tests/helpers/start-app', 'ember-scaffold/tests/helpers/destroy-app'], function (exports, _qunit, _ember, _emberScaffoldTestsHelpersStartApp, _emberScaffoldTestsHelpersDestroyApp) {
+define('git-browser/tests/helpers/module-for-acceptance', ['exports', 'qunit', 'ember', 'git-browser/tests/helpers/start-app', 'git-browser/tests/helpers/destroy-app'], function (exports, _qunit, _ember, _gitBrowserTestsHelpersStartApp, _gitBrowserTestsHelpersDestroyApp) {
   var Promise = _ember['default'].RSVP.Promise;
 
   exports['default'] = function (name) {
@@ -33,7 +33,7 @@ define('ember-scaffold/tests/helpers/module-for-acceptance', ['exports', 'qunit'
 
     (0, _qunit.module)(name, {
       beforeEach: function beforeEach() {
-        this.application = (0, _emberScaffoldTestsHelpersStartApp['default'])();
+        this.application = (0, _gitBrowserTestsHelpersStartApp['default'])();
 
         if (options.beforeEach) {
           return options.beforeEach.apply(this, arguments);
@@ -45,13 +45,13 @@ define('ember-scaffold/tests/helpers/module-for-acceptance', ['exports', 'qunit'
 
         var afterEach = options.afterEach && options.afterEach.apply(this, arguments);
         return Promise.resolve(afterEach).then(function () {
-          return (0, _emberScaffoldTestsHelpersDestroyApp['default'])(_this.application);
+          return (0, _gitBrowserTestsHelpersDestroyApp['default'])(_this.application);
         });
       }
     });
   };
 });
-define('ember-scaffold/tests/helpers/module-for-acceptance.jshint.lint-test', ['exports'], function (exports) {
+define('git-browser/tests/helpers/module-for-acceptance.jshint.lint-test', ['exports'], function (exports) {
   'use strict';
 
   QUnit.module('JSHint | helpers/module-for-acceptance.js');
@@ -60,18 +60,18 @@ define('ember-scaffold/tests/helpers/module-for-acceptance.jshint.lint-test', ['
     assert.ok(true, 'helpers/module-for-acceptance.js should pass jshint.');
   });
 });
-define('ember-scaffold/tests/helpers/resolver', ['exports', 'ember-scaffold/resolver', 'ember-scaffold/config/environment'], function (exports, _emberScaffoldResolver, _emberScaffoldConfigEnvironment) {
+define('git-browser/tests/helpers/resolver', ['exports', 'git-browser/resolver', 'git-browser/config/environment'], function (exports, _gitBrowserResolver, _gitBrowserConfigEnvironment) {
 
-  var resolver = _emberScaffoldResolver['default'].create();
+  var resolver = _gitBrowserResolver['default'].create();
 
   resolver.namespace = {
-    modulePrefix: _emberScaffoldConfigEnvironment['default'].modulePrefix,
-    podModulePrefix: _emberScaffoldConfigEnvironment['default'].podModulePrefix
+    modulePrefix: _gitBrowserConfigEnvironment['default'].modulePrefix,
+    podModulePrefix: _gitBrowserConfigEnvironment['default'].podModulePrefix
   };
 
   exports['default'] = resolver;
 });
-define('ember-scaffold/tests/helpers/resolver.jshint.lint-test', ['exports'], function (exports) {
+define('git-browser/tests/helpers/resolver.jshint.lint-test', ['exports'], function (exports) {
   'use strict';
 
   QUnit.module('JSHint | helpers/resolver.js');
@@ -80,17 +80,17 @@ define('ember-scaffold/tests/helpers/resolver.jshint.lint-test', ['exports'], fu
     assert.ok(true, 'helpers/resolver.js should pass jshint.');
   });
 });
-define('ember-scaffold/tests/helpers/start-app', ['exports', 'ember', 'ember-scaffold/app', 'ember-scaffold/config/environment'], function (exports, _ember, _emberScaffoldApp, _emberScaffoldConfigEnvironment) {
+define('git-browser/tests/helpers/start-app', ['exports', 'ember', 'git-browser/app', 'git-browser/config/environment'], function (exports, _ember, _gitBrowserApp, _gitBrowserConfigEnvironment) {
   exports['default'] = startApp;
 
   function startApp(attrs) {
     var application = undefined;
 
     // use defaults, but you can override
-    var attributes = _ember['default'].assign({}, _emberScaffoldConfigEnvironment['default'].APP, attrs);
+    var attributes = _ember['default'].assign({}, _gitBrowserConfigEnvironment['default'].APP, attrs);
 
     _ember['default'].run(function () {
-      application = _emberScaffoldApp['default'].create(attributes);
+      application = _gitBrowserApp['default'].create(attributes);
       application.setupForTesting();
       application.injectTestHelpers();
     });
@@ -98,7 +98,7 @@ define('ember-scaffold/tests/helpers/start-app', ['exports', 'ember', 'ember-sca
     return application;
   }
 });
-define('ember-scaffold/tests/helpers/start-app.jshint.lint-test', ['exports'], function (exports) {
+define('git-browser/tests/helpers/start-app.jshint.lint-test', ['exports'], function (exports) {
   'use strict';
 
   QUnit.module('JSHint | helpers/start-app.js');
@@ -107,7 +107,7 @@ define('ember-scaffold/tests/helpers/start-app.jshint.lint-test', ['exports'], f
     assert.ok(true, 'helpers/start-app.js should pass jshint.');
   });
 });
-define('ember-scaffold/tests/resolver.jshint.lint-test', ['exports'], function (exports) {
+define('git-browser/tests/resolver.jshint.lint-test', ['exports'], function (exports) {
   'use strict';
 
   QUnit.module('JSHint | resolver.js');
@@ -116,7 +116,7 @@ define('ember-scaffold/tests/resolver.jshint.lint-test', ['exports'], function (
     assert.ok(true, 'resolver.js should pass jshint.');
   });
 });
-define('ember-scaffold/tests/router.jshint.lint-test', ['exports'], function (exports) {
+define('git-browser/tests/router.jshint.lint-test', ['exports'], function (exports) {
   'use strict';
 
   QUnit.module('JSHint | router.js');
@@ -125,11 +125,11 @@ define('ember-scaffold/tests/router.jshint.lint-test', ['exports'], function (ex
     assert.ok(true, 'router.js should pass jshint.');
   });
 });
-define('ember-scaffold/tests/test-helper', ['exports', 'ember-scaffold/tests/helpers/resolver', 'ember-qunit'], function (exports, _emberScaffoldTestsHelpersResolver, _emberQunit) {
+define('git-browser/tests/test-helper', ['exports', 'git-browser/tests/helpers/resolver', 'ember-qunit'], function (exports, _gitBrowserTestsHelpersResolver, _emberQunit) {
 
-  (0, _emberQunit.setResolver)(_emberScaffoldTestsHelpersResolver['default']);
+  (0, _emberQunit.setResolver)(_gitBrowserTestsHelpersResolver['default']);
 });
-define('ember-scaffold/tests/test-helper.jshint.lint-test', ['exports'], function (exports) {
+define('git-browser/tests/test-helper.jshint.lint-test', ['exports'], function (exports) {
   'use strict';
 
   QUnit.module('JSHint | test-helper.js');
@@ -140,7 +140,7 @@ define('ember-scaffold/tests/test-helper.jshint.lint-test', ['exports'], functio
 });
 /* jshint ignore:start */
 
-require('ember-scaffold/tests/test-helper');
+require('git-browser/tests/test-helper');
 EmberENV.TESTS_FILE_LOADED = true;
 
 /* jshint ignore:end */

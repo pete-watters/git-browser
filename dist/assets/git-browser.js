@@ -6,25 +6,25 @@
 
 /* jshint ignore:end */
 
-define('ember-scaffold/app', ['exports', 'ember', 'ember-scaffold/resolver', 'ember-load-initializers', 'ember-scaffold/config/environment'], function (exports, _ember, _emberScaffoldResolver, _emberLoadInitializers, _emberScaffoldConfigEnvironment) {
+define('git-browser/app', ['exports', 'ember', 'git-browser/resolver', 'ember-load-initializers', 'git-browser/config/environment'], function (exports, _ember, _gitBrowserResolver, _emberLoadInitializers, _gitBrowserConfigEnvironment) {
 
   var App = undefined;
 
   _ember['default'].MODEL_FACTORY_INJECTIONS = true;
 
   App = _ember['default'].Application.extend({
-    modulePrefix: _emberScaffoldConfigEnvironment['default'].modulePrefix,
-    podModulePrefix: _emberScaffoldConfigEnvironment['default'].podModulePrefix,
-    Resolver: _emberScaffoldResolver['default']
+    modulePrefix: _gitBrowserConfigEnvironment['default'].modulePrefix,
+    podModulePrefix: _gitBrowserConfigEnvironment['default'].podModulePrefix,
+    Resolver: _gitBrowserResolver['default']
   });
 
-  (0, _emberLoadInitializers['default'])(App, _emberScaffoldConfigEnvironment['default'].modulePrefix);
+  (0, _emberLoadInitializers['default'])(App, _gitBrowserConfigEnvironment['default'].modulePrefix);
 
   exports['default'] = App;
 });
-define('ember-scaffold/helpers/app-version', ['exports', 'ember', 'ember-scaffold/config/environment'], function (exports, _ember, _emberScaffoldConfigEnvironment) {
+define('git-browser/helpers/app-version', ['exports', 'ember', 'git-browser/config/environment'], function (exports, _ember, _gitBrowserConfigEnvironment) {
   exports.appVersion = appVersion;
-  var version = _emberScaffoldConfigEnvironment['default'].APP.version;
+  var version = _gitBrowserConfigEnvironment['default'].APP.version;
 
   function appVersion() {
     return version;
@@ -32,14 +32,14 @@ define('ember-scaffold/helpers/app-version', ['exports', 'ember', 'ember-scaffol
 
   exports['default'] = _ember['default'].Helper.helper(appVersion);
 });
-define('ember-scaffold/helpers/pluralize', ['exports', 'ember-inflector/lib/helpers/pluralize'], function (exports, _emberInflectorLibHelpersPluralize) {
+define('git-browser/helpers/pluralize', ['exports', 'ember-inflector/lib/helpers/pluralize'], function (exports, _emberInflectorLibHelpersPluralize) {
   exports['default'] = _emberInflectorLibHelpersPluralize['default'];
 });
-define('ember-scaffold/helpers/singularize', ['exports', 'ember-inflector/lib/helpers/singularize'], function (exports, _emberInflectorLibHelpersSingularize) {
+define('git-browser/helpers/singularize', ['exports', 'ember-inflector/lib/helpers/singularize'], function (exports, _emberInflectorLibHelpersSingularize) {
   exports['default'] = _emberInflectorLibHelpersSingularize['default'];
 });
-define('ember-scaffold/initializers/app-version', ['exports', 'ember-cli-app-version/initializer-factory', 'ember-scaffold/config/environment'], function (exports, _emberCliAppVersionInitializerFactory, _emberScaffoldConfigEnvironment) {
-  var _config$APP = _emberScaffoldConfigEnvironment['default'].APP;
+define('git-browser/initializers/app-version', ['exports', 'ember-cli-app-version/initializer-factory', 'git-browser/config/environment'], function (exports, _emberCliAppVersionInitializerFactory, _gitBrowserConfigEnvironment) {
+  var _config$APP = _gitBrowserConfigEnvironment['default'].APP;
   var name = _config$APP.name;
   var version = _config$APP.version;
   exports['default'] = {
@@ -47,7 +47,7 @@ define('ember-scaffold/initializers/app-version', ['exports', 'ember-cli-app-ver
     initialize: (0, _emberCliAppVersionInitializerFactory['default'])(name, version)
   };
 });
-define('ember-scaffold/initializers/container-debug-adapter', ['exports', 'ember-resolver/container-debug-adapter'], function (exports, _emberResolverContainerDebugAdapter) {
+define('git-browser/initializers/container-debug-adapter', ['exports', 'ember-resolver/container-debug-adapter'], function (exports, _emberResolverContainerDebugAdapter) {
   exports['default'] = {
     name: 'container-debug-adapter',
 
@@ -59,7 +59,7 @@ define('ember-scaffold/initializers/container-debug-adapter', ['exports', 'ember
     }
   };
 });
-define('ember-scaffold/initializers/data-adapter', ['exports', 'ember'], function (exports, _ember) {
+define('git-browser/initializers/data-adapter', ['exports', 'ember'], function (exports, _ember) {
 
   /*
     This initializer is here to keep backwards compatibility with code depending
@@ -74,7 +74,7 @@ define('ember-scaffold/initializers/data-adapter', ['exports', 'ember'], functio
     initialize: _ember['default'].K
   };
 });
-define('ember-scaffold/initializers/ember-data', ['exports', 'ember-data/setup-container', 'ember-data/-private/core'], function (exports, _emberDataSetupContainer, _emberDataPrivateCore) {
+define('git-browser/initializers/ember-data', ['exports', 'ember-data/setup-container', 'ember-data/-private/core'], function (exports, _emberDataSetupContainer, _emberDataPrivateCore) {
 
   /*
   
@@ -113,12 +113,12 @@ define('ember-scaffold/initializers/ember-data', ['exports', 'ember-data/setup-c
     initialize: _emberDataSetupContainer['default']
   };
 });
-define('ember-scaffold/initializers/export-application-global', ['exports', 'ember', 'ember-scaffold/config/environment'], function (exports, _ember, _emberScaffoldConfigEnvironment) {
+define('git-browser/initializers/export-application-global', ['exports', 'ember', 'git-browser/config/environment'], function (exports, _ember, _gitBrowserConfigEnvironment) {
   exports.initialize = initialize;
 
   function initialize() {
     var application = arguments[1] || arguments[0];
-    if (_emberScaffoldConfigEnvironment['default'].exportApplicationGlobal !== false) {
+    if (_gitBrowserConfigEnvironment['default'].exportApplicationGlobal !== false) {
       var theGlobal;
       if (typeof window !== 'undefined') {
         theGlobal = window;
@@ -131,13 +131,13 @@ define('ember-scaffold/initializers/export-application-global', ['exports', 'emb
         return;
       }
 
-      var value = _emberScaffoldConfigEnvironment['default'].exportApplicationGlobal;
+      var value = _gitBrowserConfigEnvironment['default'].exportApplicationGlobal;
       var globalName;
 
       if (typeof value === 'string') {
         globalName = value;
       } else {
-        globalName = _ember['default'].String.classify(_emberScaffoldConfigEnvironment['default'].modulePrefix);
+        globalName = _ember['default'].String.classify(_gitBrowserConfigEnvironment['default'].modulePrefix);
       }
 
       if (!theGlobal[globalName]) {
@@ -159,7 +159,7 @@ define('ember-scaffold/initializers/export-application-global', ['exports', 'emb
     initialize: initialize
   };
 });
-define('ember-scaffold/initializers/injectStore', ['exports', 'ember'], function (exports, _ember) {
+define('git-browser/initializers/injectStore', ['exports', 'ember'], function (exports, _ember) {
 
   /*
     This initializer is here to keep backwards compatibility with code depending
@@ -174,7 +174,7 @@ define('ember-scaffold/initializers/injectStore', ['exports', 'ember'], function
     initialize: _ember['default'].K
   };
 });
-define('ember-scaffold/initializers/store', ['exports', 'ember'], function (exports, _ember) {
+define('git-browser/initializers/store', ['exports', 'ember'], function (exports, _ember) {
 
   /*
     This initializer is here to keep backwards compatibility with code depending
@@ -189,7 +189,7 @@ define('ember-scaffold/initializers/store', ['exports', 'ember'], function (expo
     initialize: _ember['default'].K
   };
 });
-define('ember-scaffold/initializers/transforms', ['exports', 'ember'], function (exports, _ember) {
+define('git-browser/initializers/transforms', ['exports', 'ember'], function (exports, _ember) {
 
   /*
     This initializer is here to keep backwards compatibility with code depending
@@ -204,27 +204,27 @@ define('ember-scaffold/initializers/transforms', ['exports', 'ember'], function 
     initialize: _ember['default'].K
   };
 });
-define("ember-scaffold/instance-initializers/ember-data", ["exports", "ember-data/-private/instance-initializers/initialize-store-service"], function (exports, _emberDataPrivateInstanceInitializersInitializeStoreService) {
+define("git-browser/instance-initializers/ember-data", ["exports", "ember-data/-private/instance-initializers/initialize-store-service"], function (exports, _emberDataPrivateInstanceInitializersInitializeStoreService) {
   exports["default"] = {
     name: "ember-data",
     initialize: _emberDataPrivateInstanceInitializersInitializeStoreService["default"]
   };
 });
-define('ember-scaffold/resolver', ['exports', 'ember-resolver'], function (exports, _emberResolver) {
+define('git-browser/resolver', ['exports', 'ember-resolver'], function (exports, _emberResolver) {
   exports['default'] = _emberResolver['default'];
 });
-define('ember-scaffold/router', ['exports', 'ember', 'ember-scaffold/config/environment'], function (exports, _ember, _emberScaffoldConfigEnvironment) {
+define('git-browser/router', ['exports', 'ember', 'git-browser/config/environment'], function (exports, _ember, _gitBrowserConfigEnvironment) {
 
   var Router = _ember['default'].Router.extend({
-    location: _emberScaffoldConfigEnvironment['default'].locationType,
-    rootURL: _emberScaffoldConfigEnvironment['default'].rootURL
+    location: _gitBrowserConfigEnvironment['default'].locationType,
+    rootURL: _gitBrowserConfigEnvironment['default'].rootURL
   });
 
   Router.map(function () {});
 
   exports['default'] = Router;
 });
-define('ember-scaffold/services/ajax', ['exports', 'ember-ajax/services/ajax'], function (exports, _emberAjaxServicesAjax) {
+define('git-browser/services/ajax', ['exports', 'ember-ajax/services/ajax'], function (exports, _emberAjaxServicesAjax) {
   Object.defineProperty(exports, 'default', {
     enumerable: true,
     get: function get() {
@@ -240,8 +240,8 @@ define('ember-scaffold/services/ajax', ['exports', 'ember-ajax/services/ajax'], 
 
 /* jshint ignore:start */
 
-define('ember-scaffold/config/environment', ['ember'], function(Ember) {
-  var prefix = 'ember-scaffold';
+define('git-browser/config/environment', ['ember'], function(Ember) {
+  var prefix = 'git-browser';
 /* jshint ignore:start */
 
 try {
@@ -268,8 +268,8 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("ember-scaffold/app")["default"].create({"name":"ember-scaffold","version":"0.0.0+b3837ae5"});
+  require("git-browser/app")["default"].create({"name":"git-browser","version":"0.0.0+e2d5ba07"});
 }
 
 /* jshint ignore:end */
-//# sourceMappingURL=ember-scaffold.map
+//# sourceMappingURL=git-browser.map
