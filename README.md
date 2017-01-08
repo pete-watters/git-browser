@@ -22,7 +22,7 @@ You will need the following things properly installed on your computer.
 
 
 # GIT personal access token
-2f3eff6b4e40a316fb5c8f5ff73b605673cfe189
+d9849c6a97a55b5796a4f62eebf71311a43498fc
 
 ## Installation
 

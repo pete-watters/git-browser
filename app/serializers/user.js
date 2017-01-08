@@ -5,7 +5,7 @@ export default ApplicationSerializer.extend({
     normalizeFindRecordResponse(store, type, payload) {
         payload.links = {
             repositories: payload.repos_url
-        }
+        };
         return this._super(...arguments);
     }
 });

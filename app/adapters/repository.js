@@ -2,7 +2,7 @@ import ApplicationAdapter from './application';
 
 export default ApplicationAdapter.extend({
     headers: {
-        Authorization: "token 2f3eff6b4e40a316fb5c8f5ff73b605673cfe189"
+        Authorization: "token d9849c6a97a55b5796a4f62eebf71311a43498fc"
     },
 
     updateRecord(store, type, snapshot) {

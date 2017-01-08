@@ -1,7 +1,8 @@
-import DS from 'ember-data';
+import Model from 'ember-data/model';
+import attr from 'ember-data/attr';
 
-export default DS.Model.extend({
-  fullName: DS.attr(),
-  language: DS.attr(),
-  stargazersCount: DS.attr('number')
+export default Model.extend({
+  fullName: attr(),
+  language: attr(),
+  stargazersCount: attr('number')
 });
