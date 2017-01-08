@@ -1,1 +1,8 @@
 <strong>{{ model.name }}</strong> (total {{ model.publicRepos }})
+
+
+<ul>
+    {{#each model.repositories as |repo|}}
+        <li>{{repo.fullName}} ({{repo.language}}, {{repo.stargazersCount}} stars)</li>
+    {{/each}}
+</ul>
