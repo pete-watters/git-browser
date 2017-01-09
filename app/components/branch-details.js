@@ -16,8 +16,8 @@ export default Ember.Component.extend({
             success: function(data) {
                 result = data;
             },
-            error: (reason) => {
-                reject(reason);
+            error: (error) => {
+                console.log(error);
             }
         });
         return result;
