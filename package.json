@@ -1,9 +1,9 @@
 {
   "name": "git-browser",
-  "version": "0.0.0",
-  "description": "Small description for git-browser goes here",
+  "version": "0.0.1",
+  "description": "Ember GitAPI browser",
   "license": "MIT",
-  "author": "",
+  "author": "Peter Watters",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -30,6 +30,7 @@
     "ember-cli-qunit": "^1.4.0",
     "ember-cli-release": "0.2.8",
     "ember-cli-sass": "6.1.0",
+    "ember-cli-simple-validation": "^1.4.1",
     "ember-cli-sri": "^2.1.0",
     "ember-cli-uglify": "^1.2.0",
     "ember-data": "^2.5.0",
