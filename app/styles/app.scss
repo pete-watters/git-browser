@@ -10,6 +10,7 @@ $font-stack-system: Helvetica, sans-serif; // needed to get around issues with b
 
 body {
   @include outer-container;
+  margin: 2.5%;
 }
 
 fieldset {
