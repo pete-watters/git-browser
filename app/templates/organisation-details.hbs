@@ -1,0 +1,36 @@
+
+
+
+<img src="{{ model.avatarURL }}" width="40" height="40" alt="Avatar URL">
+
+<strong>{{ model.name }}</strong>
+Public Repos: {{ model.publicRepos }}
+
+<form>
+    <label for="repositoryLanguageSearchString">Repository Language</label>
+    {{input id='repositoryLanguageSearchString' type='text' placeholder='Enter repository language' value=repositoryLanguageSearchString}}
+    <label for="repositoryPrivateFlag">Private Repo?</label>
+    {{input id='repositoryPrivateFlag' type='checkbox' checked=repositoryPrivateFlag}}
+    {{repositoryPrivateFlag}}
+</form>
+
+{{#each model.repositories as |repo|}}
+    {{#if (compare repo.private '===' repositoryPrivateFlag)}}
+
+        {{#unless repositoryLanguageSearchString}}
+            {{repository-details repository=repo}}
+        {{else}}
+            {{#if (compare repo.language '===' repositoryLanguageSearchString)}}
+               {{repository-details repository=repo}}
+            {{/if}}
+        {{/unless}}
+
+    {{/if}}
+
+
+    {{#if repo.showBranchDetail}}
+        {{branch-details repositoryFullName=repo.fullName}}
+    {{/if}}
+
+{{/each}}
+

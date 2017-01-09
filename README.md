@@ -21,6 +21,18 @@ You will need the following things properly installed on your computer.
 * [PhantomJS](http://phantomjs.org/)
 
 
+## Install Bitters:
+* [Bitters] (https://www.npmjs.com/package/bourbon-bitters) 
+Need to install 1.2.0 to work with stable bourbon
+  * gem install bitters -v 1.2.0
+
+Install Bourbon. Then cd into your Sass directory and run:
+  * bitters install
+
+A base directory will be generated which contains all of the Bitters files. Import Bitters after Bourbon in your application.css.scss:
+  * @import "bourbon";
+  * @import "base/base";
+
 # GIT personal access token
 d9849c6a97a55b5796a4f62eebf71311a43498fc
 

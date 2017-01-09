@@ -1,1 +1,12 @@
-@import "bourbon";
+$font-stack-system: Helvetica, sans-serif; // needed to get around issues with bitter
+
+@import "external/bourbon";
+@import "external/neat";
+@import "base/base"; // bourbon bitters
+
+
+section {
+  @include outer-container;
+  header { @include span-columns(3); }
+  section { @include span-columns(9); }
+}

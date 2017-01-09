@@ -1,12 +1,13 @@
 import Ember from 'ember';
-
-export default Ember.Route.extend({
-    actions: {
-        star(repo) {
-            repo.save();
-        }
-    },
+export default Ember.Route.extend( {
     model(){
-        return this.store.findRecord('user', 'peter-watters');
+        const store = this.store;
+        const organisation = this.get('organisationSearchString');
+
+        if(!organisation){
+            return false;
+        }else if(organisation){
+            return store.find('orgs', { name: organisation });
+        }
     }
 });

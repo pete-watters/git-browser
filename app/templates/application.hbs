@@ -1,9 +1,27 @@
-<strong>{{ model.name }}</strong> (total {{ model.publicRepos }})
+<section>
+    <header>GitHub Browser</header>
+    <section>
+        {{#if validGitHubToken}}
+
+            Valid Token found
+            <form>
+                <label for="organisationSearchString">GitHub Org</label>
+                {{input id='organisationSearchString' type='text' class='search' placeholder='Enter GitHub organisation name' value=organisationSearchString}}
+            </form>
+            {{#if organisationSearchString}}
+                {{#link-to 'organisation-details' organisationSearchString}} <button type="submit">Search</button>{{/link-to}}
+            {{/if}}
+
+            {{outlet}}
+
+        {{else}}
+            <form {{action 'authenticateGitHubAccessToken' on='submit'}}>
+                <label for="gitHubAccessToken">GitHub API token</label>
+                {{input id='gitHubAccessToken' placeholder='Enter your GitHub API token' value=gitHubAccessToken}}
+                <button type="submit">Submit</button>
+            </form>
+        {{/if}}
+    </section>
+</section>
 
 
-<ul>
-    {{#each model.repositories as |repo|}}
-        <li>{{repo.fullName}} ({{repo.language}}, {{repo.stargazersCount}} stars)</li>
-        <button {{action 'star' repo}}>Star!</button>
-    {{/each}}
-</ul>

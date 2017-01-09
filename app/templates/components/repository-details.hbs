@@ -1,0 +1,12 @@
+<ul>
+    <li>{{repository.fullName}}</li>
+    <li><a href="{{repository.htmlURL}}" target="_blank">{{repository.htmlURL}}</a></li>
+    <li>Language: {{repository.language}}</li>
+    <li>Private repository: {{repository.private}}</li>
+    <li>Branch detail:{{input id=repository.fullName type='checkbox' checked=repository.showBranchDetail}}</li>
+    <!--<button {{!action 'getBranchInformation' repository.fullName}}>Full Details</button>-->
+</ul>
+
+
+
+

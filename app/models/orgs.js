@@ -3,7 +3,9 @@ import attr from 'ember-data/attr';
 import { hasMany } from 'ember-data/relationships';
 
 export default Model.extend({
-  name: attr(),
-  publicRepos: attr('number'),
-  repositories: hasMany()
+    name: attr(),
+    publicRepos: attr('number'),
+    avatarURL: attr(),
+    repositories: hasMany()
 });
+

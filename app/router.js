@@ -6,6 +6,9 @@ const Router = Ember.Router.extend({
   rootURL: config.rootURL
 });
 
-Router.map(function() {});
+Router.map(function() {
+  this.route('organisation-details', { path: '/organisation-details/:organisation_name' });
+  this.route('page-not-found', { path: '/*wildcard' });
+});
 
 export default Router;

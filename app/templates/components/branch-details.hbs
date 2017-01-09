@@ -1,0 +1,12 @@
+Repository name: {{repositoryFullName}}
+Branch count: {{branchDetails.length}}
+
+{{#each branchDetails as |branch|}}
+    <ul>
+        <li>{{branch.name}}</li>
+        <ul>
+            <li>Last commit SHA: {{branch.commit.sha}}</li>
+            <li><a href="{{branch.commit.url}}" target="_blank">Last Commit</a></li>
+        </ul>
+    </ul>
+{{/each}}
