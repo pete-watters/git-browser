@@ -13,7 +13,6 @@ export default Ember.Controller.extend({
     gitHubApiToken: window.localStorage.getItem('gitHubAccessToken'),
     actions: {
         authenticateGitHubAccessToken() {
-            var  gitHubAccessToken  = this.get('gitHubAccessToken');
             window.localStorage.setItem('gitHubAccessToken', this.get('gitHubAccessToken'));
          }
     }
