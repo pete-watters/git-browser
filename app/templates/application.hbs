@@ -4,7 +4,7 @@
 
         <fieldset>
 
-            {{#unless validGitHubToken}}
+            {{#if validGitHubToken}}
                 <p>
                     Valid Token found - {{gitHubApiToken}}
                 </p>
@@ -16,24 +16,25 @@
                         <label for="gitHubAccessToken">GitHub API token</label>
                     </div>
                     <div class="form__input--container">
-                        {{validated-input value=gitHubAccessToken valid=gitHubAccessTokenValid placeholder="Enter your GitHub API token" type="text" required=true input-class="form-control"}}
+                        {{validated-input value=gitHubAccessToken valid=gitHubAccessTokenValid validationType='token' placeholder="Enter your GitHub API token" type="text" required=true input-class="form-control"}}
                     </div>
                 </form>
-            {{/unless}}
+            {{/if}}
 
-                <form class="form form--organisationSearch" {{action 'searchForOrganisation' on='submit'}}>
+                <form class="form form--organisationSearch">
                     <div class="form__label--container" >
                         <label class="form__label" for="organisationSearchString">GitHub Organisation</label>
                     </div>
                     <div class="form__input--container">
 
-                        {{validated-input value=gitHubAccessToken valid=gitHubAccessTokenValid placeholder="Enter your GitHub API token" type="text" required=true input-class="form-control"}}
-                        {{input id='organisationSearchString' type='text' class='search' placeholder='Enter GitHub organisation name' value=organisationSearchString required=true}}
-                    </div>
-                    <div class="form__input--container" >
-                        {{#link-to 'organisation-details' organisationSearchString}} <button type="submit" disabled={{validOrganisationSearchString}}>Search</button>{{/link-to}}
+                        {{validated-input value=organisationSearchString valid=organisationSearchStringValid validationType='text' placeholder="Enter GitHub organisation name" type="text" required=true input-class="form-control"}}
+
                     </div>
                 </form>
+
+                    {{#link-to 'organisation-details' organisationSearchString}} <button type="submit" disabled={{unless organisationSearchStringValid true}}>Search</button>{{/link-to}}
+
+
 
                 {{outlet}}
 

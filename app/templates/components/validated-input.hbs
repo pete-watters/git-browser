@@ -1,5 +1,5 @@
 <span class="{{unless valid 'has-error'}}">
     {{input type=type value=value size=size pattern=pattern name=name placeholder=placeholder disabled=disabled maxlength=maxlength tabindex=tabindex class=input-class}}
 
-    <button type="submit" {{action 'authenticateGitHubAccessToken'}} disabled={{unless valid true}}>Submit</button>
+    <button type="submit" disabled={{unless valid true}}>Submit</button>
 </span>
