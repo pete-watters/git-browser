@@ -38,3 +38,8 @@ fieldset {
     @include span-columns(2);
   }
 }
+
+// customise test output
+#ember-testing-container{
+  display: none;
+}
