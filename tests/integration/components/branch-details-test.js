@@ -1,24 +1,19 @@
-import { moduleForComponent, test } from 'ember-qunit';
-import hbs from 'htmlbars-inline-precompile';
+import { describe, it } from 'mocha';
+import { setupComponentTest } from 'ember-mocha';
 
-moduleForComponent('branch-details', 'Integration | Component | branch details', {
-  integration: true
-});
+describe('BranchDetailsComponent', function() {
+  setupComponentTest('branch-details', {
+    // specify the other units that are required for this test
+    // needs: ['component:foo', 'helper:bar']
+  });
 
-test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+  it('renders', function() {
+    // creates the component instance
+    var component = this.subject();
+    expect(component._state).to.equal('preRender');
 
-  this.render(hbs`{{branch-details}}`);
-
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#branch-details}}
-      template block text
-    {{/branch-details}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+    // renders the component on the page
+    this.render();
+    expect(component._state).to.equal('inDOM');
+  });
 });

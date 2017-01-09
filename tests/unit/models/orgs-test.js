@@ -1,12 +1,16 @@
-import { moduleForModel, test } from 'ember-qunit';
-
-moduleForModel('orgs', 'Unit | Model | orgs', {
-  // Specify the other units that are required for this test.
-  needs: []
-});
-
-// test('it exists', function(assert) {
-//   // let model = this.subject();
-//   // let store = this.store();
-//   assert.ok(!!model);
+// import { describe, it } from 'mocha';
+// import { setupModelTest } from 'ember-mocha';
+//
+// describe('Orgs', function() {
+//   setupModelTest('orgs', {
+//     // Specify the other units that are required for this test.
+//     needs: ['model:repository']
+//   });
+//
+//   // Replace this with your real tests.
+//   it('exists', function() {
+//     var model = this.subject();
+//     // var store = this.store();
+//     expect(model).to.be.ok;
+//   });
 // });

@@ -1,12 +1,14 @@
-import { moduleFor, test } from 'ember-qunit';
+import {expect} from 'chai';
+import {it, describe} from 'mocha';
+import {setupTest} from 'ember-mocha';
 
-moduleFor('adapter:repository', 'Unit | Adapter | repository', {
-  // Specify the other units that are required for this test.
-  // needs: ['serializer:foo']
+describe('Unit | Adapter | repository', function() {
+    setupTest('adapter:repository', {
+
+    });
+
+    // it('exists', function() {
+    //   let route = this.subject();
+    //   expect(route).to.be.ok;
+    // });
 });
-
-// Replace this with your real tests.
-// test('it exists', function(assert) {
-//   // let adapter = this.subject();
-//   // assert.ok(adapter);
-// });
