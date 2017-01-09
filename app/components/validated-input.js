@@ -37,9 +37,6 @@ export default Ember.Component.extend({
     actions:{
         authenticateGitHubAccessToken: function () {
             this.sendAction('authenticateGitHubAccessToken');
-        },
-        searchForOrganisation: function () {
-            this.sendAction('searchForOrganisation');
         }
 }
 });

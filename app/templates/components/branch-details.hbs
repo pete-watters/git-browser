@@ -1,12 +1,17 @@
-Repository name: {{repositoryFullName}}
-Branch count: {{branchDetails.length}}
+<td>
+    <fieldset>
+        Repository name: <strong>{{repositoryFullName}}</strong> <br>
+        Branch count: <strong>{{branchDetails.length}}</strong>
 
-{{#each branchDetails as |branch|}}
-    <ul>
-        <li>{{branch.name}}</li>
-        <ul>
-            <li>Last commit SHA: {{branch.commit.sha}}</li>
-            <li><a href="{{branch.commit.url}}" target="_blank">Last Commit</a></li>
-        </ul>
-    </ul>
-{{/each}}
+        {{#each branchDetails as |branch|}}
+            <ul>
+                <li><strong>{{branch.name}}</strong></li>
+                <ul>
+                    <li>Last commit SHA: {{branch.commit.sha}}</li>
+                    <li><a href="{{branch.commit.url}}" target="_blank"></a></li>
+                </ul>
+            </ul>
+        {{/each}}
+    </fieldset>
+
+</td>

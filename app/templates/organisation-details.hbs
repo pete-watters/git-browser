@@ -1,6 +1,3 @@
-
-
-
 <img src="{{ model.avatarURL }}" width="40" height="40" alt="Avatar URL">
 
 <strong>{{ model.name }}</strong>
@@ -14,23 +11,35 @@ Public Repos: {{ model.publicRepos }}
     {{repositoryPrivateFlag}}
 </form>
 
-{{#each model.repositories as |repo|}}
-    {{#if (compare repo.private '===' repositoryPrivateFlag)}}
+<table class="table--repositoryDetails">
+    <tbody>
+    <tr>
+        <th>Name</th>
+        <th>URL</th>
+        <th>Language</th>
+        <th>Private</th>
+        <th>Branch detail</th>
+    </tr>
+    {{#each model.repositories as |repo|}}
+        {{#if (compare repo.private '===' repositoryPrivateFlag)}}
 
-        {{#unless repositoryLanguageSearchString}}
-            {{repository-details repository=repo}}
-        {{else}}
-            {{#if (compare repo.language '===' repositoryLanguageSearchString)}}
-               {{repository-details repository=repo}}
-            {{/if}}
-        {{/unless}}
+            {{#unless repositoryLanguageSearchString}}
+                {{repository-details repository=repo}}
+            {{else}}
+                {{#if (compare repo.language '===' repositoryLanguageSearchString)}}
+                    {{repository-details repository=repo}}
+                {{/if}}
+            {{/unless}}
 
-    {{/if}}
+        {{/if}}
 
 
-    {{#if repo.showBranchDetail}}
-        {{branch-details repositoryFullName=repo.fullName}}
-    {{/if}}
+        {{#if repo.showBranchDetail}}
+            {{branch-details repositoryFullName=repo.fullName}}
+        {{/if}}
 
-{{/each}}
+    {{/each}}
+    </tbody>
+</table>
+
 

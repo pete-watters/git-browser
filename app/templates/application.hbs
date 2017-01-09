@@ -17,11 +17,12 @@
                     </div>
                     <div class="form__input--container">
                         {{validated-input value=gitHubAccessToken valid=gitHubAccessTokenValid validationType='token' placeholder="Enter your GitHub API token" type="text" required=true input-class="form-control"}}
+                        <button type="submit" disabled={{unless gitHubAccessTokenValid true}}>Submit</button>
                     </div>
                 </form>
             {{/if}}
 
-                <form class="form form--organisationSearch">
+                <form class="form form--organisationSearch" {{action 'searchForOrganisation' on='submit'}}>
                     <div class="form__label--container" >
                         <label class="form__label" for="organisationSearchString">GitHub Organisation</label>
                     </div>
@@ -29,10 +30,10 @@
 
                         {{validated-input value=organisationSearchString valid=organisationSearchStringValid validationType='text' placeholder="Enter GitHub organisation name" type="text" required=true input-class="form-control"}}
 
+                        {{#link-to 'organisation-details' organisationSearchString}} <button disabled={{unless organisationSearchStringValid true}}>Search</button>{{/link-to}}
                     </div>
                 </form>
 
-                    {{#link-to 'organisation-details' organisationSearchString}} <button type="submit" disabled={{unless organisationSearchStringValid true}}>Search</button>{{/link-to}}
 
 
 

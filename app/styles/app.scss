@@ -6,6 +6,7 @@ $font-stack-system: Helvetica, sans-serif; // needed to get around issues with b
 @import "base/base"; // bourbon bitters
 @import "organisationSearch";
 @import "authenticateGitHubAccessToken";
+@import "repositoryDetails";
 
 body {
   @include outer-container;
