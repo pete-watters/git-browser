@@ -1,5 +1,6 @@
-import {expect} from 'chai';
-import {it, describe} from 'mocha';
+// import {expect} from 'chai';
+// import {it, describe} from 'mocha';
+import { describe} from 'mocha';
 import {setupTest} from 'ember-mocha';
 
 describe('Unit | Serializer | application', function() {
