@@ -10,25 +10,25 @@
                 </p>
 
             {{else}}
+
                 <form class="form form--authenticateGitHubAccessToken" {{action 'authenticateGitHubAccessToken' on='submit'}}>
                     <div class="form__label--container">
                         <label for="gitHubAccessToken">GitHub API token</label>
                     </div>
                     <div class="form__input--container">
-                        {{input id='gitHubAccessToken' placeholder='Enter your GitHub API token' value=gitHubAccessToken}}
-                    </div>
-                    <div class="form__input--container">
-                        <button type="submit">Submit</button>
+                        {{validated-input value=gitHubAccessToken valid=gitHubAccessTokenValid placeholder="Enter your GitHub API token" type="text" required=true input-class="form-control"}}
                     </div>
                 </form>
             {{/unless}}
 
-                <form class="form form--organisationSearch">
+                <form class="form form--organisationSearch" {{action 'searchForOrganisation' on='submit'}}>
                     <div class="form__label--container" >
-                        <label class="form__label" for="organisationSearchString">GitHub Org</label>
+                        <label class="form__label" for="organisationSearchString">GitHub Organisation</label>
                     </div>
                     <div class="form__input--container">
-                        {{input id='organisationSearchString' type='text' class='search' placeholder='Enter GitHub organisation name' value=organisationSearchString}}
+
+                        {{validated-input value=gitHubAccessToken valid=gitHubAccessTokenValid placeholder="Enter your GitHub API token" type="text" required=true input-class="form-control"}}
+                        {{input id='organisationSearchString' type='text' class='search' placeholder='Enter GitHub organisation name' value=organisationSearchString required=true}}
                     </div>
                     <div class="form__input--container" >
                         {{#link-to 'organisation-details' organisationSearchString}} <button type="submit" disabled={{validOrganisationSearchString}}>Search</button>{{/link-to}}

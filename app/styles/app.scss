@@ -17,3 +17,23 @@ fieldset {
   margin: 0 0 .75em;
   padding: 1.5em;
 }
+
+.has-error{
+  input{
+    background: #f9f2f4;
+    color: #B07675;
+
+  }
+}
+
+.form__label--container {
+  @include span-columns(2);
+}
+.form__input--container {
+  input{
+    @include span-columns(6);
+  }
+  button{
+    @include span-columns(2);
+  }
+}

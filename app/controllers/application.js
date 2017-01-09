@@ -15,6 +15,7 @@ export default Ember.Controller.extend({
         authenticateGitHubAccessToken() {
             let  gitHubAccessToken  = this.get('gitHubAccessToken');
             window.localStorage.setItem('gitHubAccessToken', this.get('gitHubAccessToken'));
+        //    TODO remove my token - d0e9255885e342defb086deb444abbec1b36981e
         }
     }
 });
