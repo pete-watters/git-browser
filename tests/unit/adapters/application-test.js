@@ -1,18 +1,15 @@
-import { expect } from 'chai';
-import { describeModule, it } from 'ember-mocha';
+import {QUnit} from 'ember-qunit';
+import {expect} from 'chai';
+import {it, describe} from 'mocha';
+import {setupTest} from 'ember-mocha';
 
-describeModule(
-  'adapter:application',
-  'Unit | Adapter | application',
-  {
-    // Specify the other units that are required for this test.
-    // needs: ['serializer:foo']
-  },
-  function() {
-    // Replace this with your real tests.
-    it('exists', function() {
-      let adapter = this.subject();
-      expect(adapter).to.be.ok;
-    });
-  }
-);
+describe('Unit | Adapter | application', function() {
+  setupTest('application', {
+
+  });
+
+  // it('exists', function() {
+  //   let route = this.subject();
+  //   expect(route).to.be.ok;
+  // });
+});

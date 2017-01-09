@@ -5,8 +5,8 @@ moduleForModel('orgs', 'Unit | Model | orgs', {
   needs: []
 });
 
-test('it exists', function(assert) {
-  let model = this.subject();
-  // let store = this.store();
-  assert.ok(!!model);
-});
+// test('it exists', function(assert) {
+//   // let model = this.subject();
+//   // let store = this.store();
+//   assert.ok(!!model);
+// });

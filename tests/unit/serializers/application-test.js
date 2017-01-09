@@ -1,21 +1,18 @@
-import { expect } from 'chai';
-import { describeModel, it } from 'ember-mocha';
+import {expect} from 'chai';
+import {it, describe} from 'mocha';
+import {setupTest} from 'ember-mocha';
 
-describeModel(
-  'application',
-  'Unit | Serializer | application',
-  {
-    // Specify the other units that are required for this test.
+describe('Unit | Serializer | application', function() {
+  setupTest('applications', {
     needs: ['serializer:application']
-  },
-  function() {
-    // Replace this with your real tests.
-    it('serializes records', function() {
-      let record = this.subject();
+  });
 
-      let serializedRecord = record.serialize();
+  // it('serializes records', function() {
+  //   let record = this.subject();
+  //
+  //   let serializedRecord = record.serialize();
+  //
+  //   expect(serializedRecord).to.be.ok;
+  // });
+});
 
-      expect(serializedRecord).to.be.ok;
-    });
-  }
-);
