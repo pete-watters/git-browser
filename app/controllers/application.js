@@ -2,17 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
     organisationSearchString: null,
-    validGitHubToken: () => {
-        if(window.localStorage.getItem('gitHubAccessToken')){
-            return true;
-        }else{
-            return false;
-        }
-
-    },
-    gitHubApiToken: window.localStorage.getItem('gitHubAccessToken'),
+    validGitHubToken: false,
     actions: {
         authenticateGitHubAccessToken() {
+            this.set('validGitHubToken', true);
             window.localStorage.setItem('gitHubAccessToken', this.get('gitHubAccessToken'));
          }
     }
