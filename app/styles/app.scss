@@ -1,12 +1,19 @@
 $font-stack-system: Helvetica, sans-serif; // needed to get around issues with bitter
 
+@import "external/normalize";
 @import "external/bourbon";
 @import "external/neat";
 @import "base/base"; // bourbon bitters
+@import "organisationSearch";
+@import "authenticateGitHubAccessToken";
 
-
-section {
+body {
   @include outer-container;
-  header { @include span-columns(3); }
-  section { @include span-columns(9); }
+}
+
+fieldset {
+  background: #f7f7f7;
+  border: 1px solid #DDD;
+  margin: 0 0 .75em;
+  padding: 1.5em;
 }

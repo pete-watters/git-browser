@@ -1,27 +1,46 @@
-<section>
-    <header>GitHub Browser</header>
-    <section>
-        {{#if validGitHubToken}}
+<section class="container">
+    <div class="wrapper">
+        <h1 id="main-header">Ember - GitHub Browser</h1>
 
-            Valid Token found
-            <form>
-                <label for="organisationSearchString">GitHub Org</label>
-                {{input id='organisationSearchString' type='text' class='search' placeholder='Enter GitHub organisation name' value=organisationSearchString}}
-            </form>
-            {{#if organisationSearchString}}
-                {{#link-to 'organisation-details' organisationSearchString}} <button type="submit">Search</button>{{/link-to}}
-            {{/if}}
+        <fieldset>
 
-            {{outlet}}
+            {{#unless validGitHubToken}}
+                <p>
+                    Valid Token found - {{gitHubApiToken}}
+                </p>
 
-        {{else}}
-            <form {{action 'authenticateGitHubAccessToken' on='submit'}}>
-                <label for="gitHubAccessToken">GitHub API token</label>
-                {{input id='gitHubAccessToken' placeholder='Enter your GitHub API token' value=gitHubAccessToken}}
-                <button type="submit">Submit</button>
-            </form>
-        {{/if}}
-    </section>
+            {{else}}
+                <form class="form form--authenticateGitHubAccessToken" {{action 'authenticateGitHubAccessToken' on='submit'}}>
+                    <div class="form__label--container">
+                        <label for="gitHubAccessToken">GitHub API token</label>
+                    </div>
+                    <div class="form__input--container">
+                        {{input id='gitHubAccessToken' placeholder='Enter your GitHub API token' value=gitHubAccessToken}}
+                    </div>
+                    <div class="form__input--container">
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+            {{/unless}}
+
+                <form class="form form--organisationSearch">
+                    <div class="form__label--container" >
+                        <label class="form__label" for="organisationSearchString">GitHub Org</label>
+                    </div>
+                    <div class="form__input--container">
+                        {{input id='organisationSearchString' type='text' class='search' placeholder='Enter GitHub organisation name' value=organisationSearchString}}
+                    </div>
+                    <div class="form__input--container" >
+                        {{#link-to 'organisation-details' organisationSearchString}} <button type="submit" disabled={{validOrganisationSearchString}}>Search</button>{{/link-to}}
+                    </div>
+                </form>
+
+                {{outlet}}
+
+        </fieldset>
+    </div>
 </section>
+
+
 
 

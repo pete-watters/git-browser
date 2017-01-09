@@ -1,0 +1,10 @@
+.form--organisationSearch {
+  @include outer-container;
+
+  .form__label--container {
+    @include span-columns(2);
+  }
+  .form__input--container {
+    @include span-columns(4);
+  }
+}
