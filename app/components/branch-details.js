@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
     tagName: 'tr',
+    classNames: ['tr--branch-detail-results'],
     repositoryFullName: null,
     branchDetails: function() {
 

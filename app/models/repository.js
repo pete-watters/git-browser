@@ -4,6 +4,7 @@ import { hasMany } from 'ember-data/relationships';
 
 export default Model.extend({
   fullName: attr(),
+  name: attr(),
   language: attr(),
   htmlURL: attr(),
   private: attr(),
