@@ -1,11 +1,12 @@
 <td>
     <fieldset>
-        Repository name: <strong>{{repositoryFullName}}</strong> <br>
-        Branch count: <strong>{{branchDetails.length}}</strong>
+
+        <p>Repository name: <span class="fieldset--branch-details_repositoryName">{{repositoryFullName}}</span> </p>
+        <p>Branch count: <span class="fieldset--branch-details_branchCount">{{branchDetails.length}}</span></p>
 
         {{#each branchDetails as |branch|}}
             <ul>
-                <li><strong>{{branch.name}}</strong></li>
+                <li><strong class="fieldset--branch-details_branchName">{{branch.name}}</strong></li>
                 <ul>
                     <li>Last commit SHA: {{branch.commit.sha}}</li>
                     <li><a href="{{branch.commit.url}}" target="_blank"></a></li>
