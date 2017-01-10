@@ -1,6 +1,6 @@
 import { test } from 'qunit';
 import moduleForAcceptance from 'git-browser/tests/helpers/module-for-acceptance';
-import apiKey from 'git-browser/tests/helpers/api-key';
+import apiKey from 'git-browser/tests/helpers/custom/api-key';
 
 moduleForAcceptance('Acceptance | organisation search disabled until term entered');
 

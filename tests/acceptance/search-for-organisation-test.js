@@ -1,16 +1,11 @@
 import { test } from 'qunit';
 import moduleForAcceptance from 'git-browser/tests/helpers/module-for-acceptance';
-import apiKey from 'git-browser/tests/helpers/api-key';
+import searchForOrganisation from 'git-browser/tests/helpers/custom/search-for-organisation';
 
 moduleForAcceptance('Acceptance | search for organisation');
 
 test('visiting /search-for-organisation', function(assert) {
-  visit('/');
-  fillIn('.form__input--container input', apiKey);
-  click('.form__input--container button');
-  fillIn('.form--organisationSearch .form__input--container input', 'emberjs');
-  click('.form--organisationSearch .form__input--container button');
-
+  searchForOrganisation();
 
   andThen(function() {
     assert.equal(find('fieldset strong').text(), 'Ember.js');

@@ -56,7 +56,7 @@ A base directory will be generated which contains all of the Bitters files. Impo
 * `ember test --server`
 
 ### GIT personal access token
-* The GitHub access token is required by the tests. There is a helper in 'tests/helpers/api-key.js' you can specify it in. 
+* The GitHub access token is required by the tests. There is a helper in 'tests/helpers/custom/api-key.js' you can specify it in. 
 * I have set this to 'INSERT-YOUR-KEY' as if I commit mine it will become invalid. 
 * You need to update this for the tests to pass
 
