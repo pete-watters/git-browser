@@ -16,39 +16,12 @@ You can view organisations and filter their repo based on criteria.
 * sessionAuthentication: I am using a localStorage key to store the gitAPI key. This would be better using ember-simple-auth
 * ember-data-github: my app would most likely be better using this however I struggled to figure out how to configure it and cut my losses. I guess if someone told me I would have a lightbulb moment!
 
-## Prerequisites
-
-You will need the following things properly installed on your computer.
-
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with NPM)
-* [Bower](https://bower.io/)
-* [Ember CLI](https://ember-cli.com/)
-* [PhantomJS](http://phantomjs.org/)
-* [SASS](http://sass-lang.com/)
-* [git-flow](https://github.com/nvie/gitflow)
-
-
-
-## Installation
+## Installation - to run
 
 * `git clone <repository-url>` this repository
 * `cd git-browser`
 * `npm install`
 * `bower install`
-
-
-## Install Bitters:
-* [Bitters] (https://www.npmjs.com/package/bourbon-bitters) 
-Need to install 1.2.0 to work with stable bourbon
-  * gem install bitters -v 1.2.0
-
-Install Bourbon. Then cd into your Sass directory and run:
-  * bitters install
-
-A base directory will be generated which contains all of the Bitters files. Import Bitters after Bourbon in your application.css.scss:
-  * @import "bourbon";
-  * @import "base/base";
 
 ## Running / Development
 
@@ -81,6 +54,28 @@ A base directory will be generated which contains all of the Bitters files. Impo
 ### Deploying
 
 If you do a production build you can deploy the contents of the dist/ folder to a webserver of your choosing. 
+
+## Optional installation for further development
+
+* [Git](https://git-scm.com/)
+* [Node.js](https://nodejs.org/) (with NPM)
+* [Bower](https://bower.io/)
+* [Ember CLI](https://ember-cli.com/)
+* [PhantomJS](http://phantomjs.org/)
+* [SASS](http://sass-lang.com/)
+* [git-flow](https://github.com/nvie/gitflow)
+
+### Install Bitters:
+* [Bitters] (https://www.npmjs.com/package/bourbon-bitters) 
+Need to install 1.2.0 to work with stable bourbon
+  * gem install bitters -v 1.2.0
+
+Install Bourbon. Then cd into your Sass directory and run:
+  * bitters install
+
+A base directory will be generated which contains all of the Bitters files. Import Bitters after Bourbon in your application.css.scss:
+  * @import "bourbon";
+  * @import "base/base";
 
 ## Further Reading / Useful Links
 
