@@ -1,0 +1,25 @@
+.form--repositorySearch{
+  .section--repositoryLanguageSearchString{
+    label{
+      @include span-columns(2);
+      margin-left: 2%;
+    }
+    input{
+      @include span-columns(4);
+      margin-right: 1%;
+    }
+  }
+
+  .section--repositoryPrivateFlag{
+    label{
+      @include span-columns(3);
+      margin-left: 2%;
+    }
+    input{
+      @include span-columns(1);
+      margin-right: 1%;
+    }
+  }
+}
+
+

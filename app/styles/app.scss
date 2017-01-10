@@ -1,1 +1,49 @@
-@import "bourbon";
+$font-stack-system: Helvetica, sans-serif; // needed to get around issues with bitter
+
+@import "external/normalize";
+@import "external/bourbon";
+@import "external/neat";
+@import "base/base"; // bourbon bitters
+@import "organisationSearch";
+@import "authenticateGitHubAccessToken";
+@import "repositoryDetails";
+@import "organisationFilter";
+@import "organisationDetails";
+
+body {
+  @include outer-container;
+  margin: 2.5%;
+}
+
+fieldset {
+  background: #f7f7f7;
+  border: 1px solid #DDD;
+  margin: 0 0 .75em;
+  padding: 1.5em;
+}
+
+.has-error{
+  input{
+    background: #f9f2f4;
+    color: #B07675;
+
+  }
+}
+
+.form__label--container {
+  @include span-columns(3);
+}
+.form__input--container {
+  input{
+    @include span-columns(6);
+  }
+  button{
+    @include span-columns(3);
+    float: right;
+  }
+}
+
+// customise test output
+#ember-testing-container{
+  display: none;
+}

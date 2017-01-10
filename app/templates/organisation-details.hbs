@@ -1,0 +1,50 @@
+<section class="section--organisationDetails">
+    <article class="article--organisationDetailsAvatar"><img src="{{ model.avatarURL }}" width="40" height="40" alt="Avatar URL"></article>
+    <article class="article--organisationDetailsOrgName"><strong>{{ model.name }}</strong></article>
+    <article class="article--organisationDetailsPublicRepos">Public Repos: {{ model.publicRepos }}</article>
+</section>
+
+<form class="form--repositorySearch">
+    <section class="section--repositoryLanguageSearchString">
+        <label for="repositoryLanguageSearchString">Repository Language</label>
+        {{input id='repositoryLanguageSearchString' type='text' placeholder='Enter repository language' value=repositoryLanguageSearchString}}
+    </section>
+    <section class="section--repositoryPrivateFlag">
+        <label for="repositoryPrivateFlag">Private Repo?</label>
+      {{input id='repositoryPrivateFlag' type='checkbox' checked=repositoryPrivateFlag}}
+    </section>
+
+</form>
+
+<table class="table--repositoryDetails">
+    <tbody>
+    <tr>
+        <th>Name</th>
+        <th>URL</th>
+        <th>Language</th>
+        <th>Private</th>
+        <th>Branch detail</th>
+    </tr>
+    {{#each model.repositories as |repo|}}
+        {{#if (compare repo.private '===' repositoryPrivateFlag)}}
+
+            {{#unless repositoryLanguageSearchString}}
+                {{repository-details repository=repo}}
+            {{else}}
+                {{#if (compare repo.language '===' repositoryLanguageSearchString)}}
+                    {{repository-details repository=repo}}
+                {{/if}}
+            {{/unless}}
+
+        {{/if}}
+
+
+        {{#if repo.showBranchDetail}}
+            {{branch-details repositoryFullName=repo.fullName}}
+        {{/if}}
+
+    {{/each}}
+    </tbody>
+</table>
+
+

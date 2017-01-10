@@ -1,0 +1,11 @@
+.form--organisationSearch {
+  @include outer-container;
+
+
+  .form__label--container {
+    @extend .form__label--container;
+  }
+  .form__input--container {
+    @extend .form__input--container;
+  }
+}

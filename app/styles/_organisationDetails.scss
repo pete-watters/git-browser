@@ -1,0 +1,14 @@
+.section--organisationDetails{
+ @extend fieldset;
+  @include outer-container;
+  .article--organisationDetailsAvatar{
+    @include span-columns(3);
+  }
+  .article--organisationDetailsOrgName{
+    @include span-columns(6);
+  }
+  .article--organisationDetailsPublicRepos{
+    @include span-columns(3);
+
+  }
+}
