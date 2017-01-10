@@ -1,6 +1,6 @@
 {
   "name": "git-browser",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Ember GitAPI browser",
   "license": "MIT",
   "author": "Peter Watters",
@@ -8,7 +8,7 @@
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "",
+  "repository": "https://github.com/peter-watters/git-browser",
   "scripts": {
     "build": "ember build",
     "start": "ember server",
