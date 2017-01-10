@@ -50,15 +50,22 @@ A base directory will be generated which contains all of the Bitters files. Impo
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
 
-### Running Tests
+### Testing
 
-* `ember test`
-* `ember test --server`
-
+### Overview
+ I attempted to use ember-mocha at first but I don't think it's a polished tool just yet so I went back to qUnit after having some difficulty. 
+ I focused on acceptance tests as I believe that's the most important tests for front end. With more time I would extend integration and unit testing further. 
+ For UI testing I believe you really can't beat Selenium which uses actual browsers.
+ 
 ### GIT personal access token
 * The GitHub access token is required by the tests. There is a helper in 'tests/helpers/custom/api-key.js' you can specify it in. 
 * I have set this to 'INSERT-YOUR-KEY' as if I commit mine it will become invalid. 
 * You need to update this for the tests to pass
+
+## To run tests
+* `ember serve`
+* Visit your test results at [http://localhost:4200/tests](http://localhost:4200/tests).
+
 
 ### Building
 
@@ -67,7 +74,7 @@ A base directory will be generated which contains all of the Bitters files. Impo
 
 ### Deploying
 
-Specify what it takes to deploy your app.
+If you do a production build you can deploy the contents of the dist/ folder to a webserver of your choosing. 
 
 ## Further Reading / Useful Links
 
