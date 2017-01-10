@@ -1,14 +1,14 @@
 # git-browser
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This is a simple Ember app that connects to the GitHub API and allows you to search for organisations. 
+
+You can view organisations and filter their repo based on criteria. 
 
 ## Development notes
-'app/adapters/application.js' points to the github API host. 
-Github is not JSON API compliant so the REST adapter is used.
-
-
-
+* this app uses the git-flow branching strategy (because it's awesome!)
+* 'app/adapters/application.js' points to the github API host. Github is not JSON API compliant so the REST adapter is used.
+* unsuccessful attempts were made to try and use 'ember-cli-mocha' - they can be seen on the branch 'feature/ember-mocha' 
+  
 
 ## Prerequisites
 
@@ -19,6 +19,17 @@ You will need the following things properly installed on your computer.
 * [Bower](https://bower.io/)
 * [Ember CLI](https://ember-cli.com/)
 * [PhantomJS](http://phantomjs.org/)
+* [SASS](http://sass-lang.com/)
+* [git-flow](https://github.com/nvie/gitflow)
+
+
+
+## Installation
+
+* `git clone <repository-url>` this repository
+* `cd git-browser`
+* `npm install`
+* `bower install`
 
 
 ## Install Bitters:
@@ -33,29 +44,21 @@ A base directory will be generated which contains all of the Bitters files. Impo
   * @import "bourbon";
   * @import "base/base";
 
-# GIT personal access token
-d9849c6a97a55b5796a4f62eebf71311a43498fc
-
-## Installation
-
-* `git clone <repository-url>` this repository
-* `cd git-browser`
-* `npm install`
-* `bower install`
-
 ## Running / Development
 
 * `ember serve`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
 
 ### Running Tests
 
 * `ember test`
 * `ember test --server`
+
+### GIT personal access token
+* The GitHub access token is required by the tests. There is a helper in 'tests/helpers/api-key.js' you can specify it in. 
+* I have set this to 'INSERT-YOUR-KEY' as if I commit mine it will become invalid. 
+* You need to update this for the tests to pass
 
 ### Building
 
@@ -70,6 +73,8 @@ Specify what it takes to deploy your app.
 
 * [ember.js](http://emberjs.com/)
 * [ember-cli](https://ember-cli.com/)
+* [bourbon-neaat](http://neat.bourbon.io/)
+* [bitters](http://bitters.bourbon.io/)
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
