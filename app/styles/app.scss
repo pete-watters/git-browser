@@ -7,6 +7,8 @@ $font-stack-system: Helvetica, sans-serif; // needed to get around issues with b
 @import "organisationSearch";
 @import "authenticateGitHubAccessToken";
 @import "repositoryDetails";
+@import "organisationFilter";
+@import "organisationDetails";
 
 body {
   @include outer-container;
@@ -29,14 +31,15 @@ fieldset {
 }
 
 .form__label--container {
-  @include span-columns(2);
+  @include span-columns(3);
 }
 .form__input--container {
   input{
     @include span-columns(6);
   }
   button{
-    @include span-columns(2);
+    @include span-columns(3);
+    float: right;
   }
 }
 

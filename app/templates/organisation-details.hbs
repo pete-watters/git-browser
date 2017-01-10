@@ -1,14 +1,19 @@
-<img src="{{ model.avatarURL }}" width="40" height="40" alt="Avatar URL">
+<section class="section--organisationDetails">
+    <article class="article--organisationDetailsAvatar"><img src="{{ model.avatarURL }}" width="40" height="40" alt="Avatar URL"></article>
+    <article class="article--organisationDetailsOrgName"><strong>{{ model.name }}</strong></article>
+    <article class="article--organisationDetailsPublicRepos">Public Repos: {{ model.publicRepos }}</article>
+</section>
 
-<strong>{{ model.name }}</strong>
-Public Repos: {{ model.publicRepos }}
+<form class="form--repositorySearch">
+    <section class="section--repositoryLanguageSearchString">
+        <label for="repositoryLanguageSearchString">Repository Language</label>
+        {{input id='repositoryLanguageSearchString' type='text' placeholder='Enter repository language' value=repositoryLanguageSearchString}}
+    </section>
+    <section class="section--repositoryPrivateFlag">
+        <label for="repositoryPrivateFlag">Private Repo?</label>
+      {{input id='repositoryPrivateFlag' type='checkbox' checked=repositoryPrivateFlag}}
+    </section>
 
-<form>
-    <label for="repositoryLanguageSearchString">Repository Language</label>
-    {{input id='repositoryLanguageSearchString' type='text' placeholder='Enter repository language' value=repositoryLanguageSearchString}}
-    <label for="repositoryPrivateFlag">Private Repo?</label>
-    {{input id='repositoryPrivateFlag' type='checkbox' checked=repositoryPrivateFlag}}
-    {{repositoryPrivateFlag}}
 </form>
 
 <table class="table--repositoryDetails">
