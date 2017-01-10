@@ -22,3 +22,12 @@ test('Verify invalid term shows no result', function(assert) {
     assert.equal(find('fieldset table tr').length, 1);
   });
 });
+
+test('Verify filtering private has no results', function(assert) {
+  searchForOrganisation();
+  click('#repositoryPrivateFlag');
+
+  andThen(function() {
+    assert.equal(find('fieldset table tr').length, 1);
+  });
+});
