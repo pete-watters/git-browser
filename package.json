@@ -37,10 +37,12 @@
     "ember-load-initializers": "^0.5.1",
     "ember-normalize": "1.0.0",
     "ember-resolver": "^2.0.3",
+    "ember-simple-auth": "1.2.0-beta.1",
     "gaz": "^1.0.3",
     "keef": "^2.0.1",
     "loader.js": "^4.0.1",
     "normalize.css": "4.1.1",
+    "path-posix": "^1.0.0",
     "phantomjs": "^1.9.8"
   },
   "engines": {
