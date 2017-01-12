@@ -1,11 +1,28 @@
+{{#link-to 'index'}}Home{{/link-to}}
+
+{{#link-to 'organisation' input}}EmberJS{{/link-to}}
+
+{{#if session.isAuthenticated}}
+    <a id="logout" {{ action 'invalidateSession' }}>Logout</a>
+    {{session.isAuthenticated}}
+{{else}}
+  {{#link-to 'login'}}Login{{/link-to}}
+{{/if}}
+
+{{outlet}}
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+
 <section class="container">
     <div class="wrapper">
         <h1 id="main-header">Ember - GitHub Browser</h1>
 
         <fieldset>
-
-            {{#if validGitHubToken}}
-                <p><span>Valid Token API found</span> {{gitHubAccessToken}}</p>
 
                 <form class="form form--organisationSearch" {{action 'searchForOrganisation' on='submit'}}>
                     <div class="form__label--container" >
@@ -18,9 +35,9 @@
                       {{#link-to 'organisation-details' organisationSearchString}} <button disabled={{unless organisationSearchStringValid true}}>Search</button>{{/link-to}}
                     </div>
                 </form>
-            {{else}}
 
-                <form class="form form--authenticateGitHubAccessToken" {{action 'authenticateGitHubAccessToken' on='submit'}}>
+
+                <form class="form form--authenticateGitHubAccessToken" {{!action 'authenticateGitHubAccessToken' on='submit'}}>
                     <div class="form__label--container">
                         <label for="gitHubAccessToken">GitHub API token</label>
                     </div>
@@ -29,7 +46,7 @@
                         <button type="submit" disabled={{unless gitHubAccessTokenValid true}}>Submit</button>
                     </div>
                 </form>
-            {{/if}}
+
 
                 {{outlet}}
 

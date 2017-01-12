@@ -1,18 +1,10 @@
 import Ember from 'ember';
-export default Ember.Route.extend( {
-  beforeModel(){
-    // remove key from localStorage if exists
-    window.localStorage.removeItem('gitHubAccessToken');
+import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mixin';
 
-  },
-    model(){
-        const store = this.store;
-        const organisation = this.get('organisationSearchString');
-
-        if(!organisation){
-            return false;
-        }else if(organisation){
-            return store.find('orgs', { name: organisation });
-        }
+export default Ember.Route.extend(ApplicationRouteMixin, {
+  actions: {
+    invalidateSession() {
+      this.get('session').invalidate();
     }
+  }
 });
