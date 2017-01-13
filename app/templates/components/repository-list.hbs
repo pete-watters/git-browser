@@ -1,0 +1,34 @@
+<div class="vertical-tabs-container">
+    <div class="vertical-tabs">
+      {{#each inputModel as |repository index|}}
+               <a href="javascript:void(0)" id="repository-list-{{index}}" class="js-vertical-tab vertical-tab" rel="{{repository.name}}">{{repository.name}}</a>
+      {{/each}}
+    </div>
+    <div class="vertical-tab-content-container">
+      {{#each inputModel as |repository|}}
+          <div id="{{repository.name}}" class="js-vertical-tab-content vertical-tab-content">
+              <div class="comment">
+                  <div class="comment-image">
+                      <img src="{{repository.owner.avatar_url}}">
+                  </div>
+                  <div class="comment-content">
+                      <h1>{{repository.name}}</h1>
+                      <p>
+                        {{repository.description}}
+                      <ul>
+                          <li><strong>Language: </strong>{{repository.language}}</li>
+                          <li><strong>Private: </strong>{{repository.private}}</li>
+                          <li><strong>Clone URL </strong>{{repository.clone_url}}</li>
+                      </ul>
+                      </p>
+                      <p class="comment-detail">
+                          <strong>Forks count: </strong>{{repository.forks_count}}
+                          <strong>Watchers: </strong>{{repository.watchers}}
+                          <strong>Created: </strong>{{repository.created_at}}
+                      </p>
+                  </div>
+              </div>
+          </div>
+      {{/each}}
+    </div>
+</div>
