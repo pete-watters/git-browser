@@ -1,59 +1,13 @@
-{{#link-to 'index'}}Home{{/link-to}}
-
-{{#link-to 'organisation' input}}EmberJS{{/link-to}}
+<h1 id="main-header">Ember - GitHub Browser</h1>
+{{header-nav}}
 
 {{#if session.isAuthenticated}}
-    <a id="logout" {{ action 'invalidateSession' }}>Logout</a>
-    {{session.isAuthenticated}}
-{{else}}
-  {{#link-to 'login'}}Login{{/link-to}}
+  {{organisation-search}}
 {{/if}}
+{{#unless session.isAuthenticated}}
+  {{side-image header="Login" paragraph="Please login to get started" imageURL="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png"}}
+{{/unless}}
 
 {{outlet}}
-<hr>
-<hr>
-<hr>
-<hr>
-<hr>
-<hr>
-<hr>
 
-<section class="container">
-    <div class="wrapper">
-        <h1 id="main-header">Ember - GitHub Browser</h1>
-
-        <fieldset>
-
-                <form class="form form--organisationSearch" {{action 'searchForOrganisation' on='submit'}}>
-                    <div class="form__label--container" >
-                        <label class="form__label" for="organisationSearchString">GitHub Organisation</label>
-                    </div>
-                    <div class="form__input--container">
-
-                      {{validated-input value=organisationSearchString valid=organisationSearchStringValid validationType='text' placeholder="Enter GitHub organisation name" type="text" required=true input-class="form-control"}}
-
-                      {{#link-to 'organisation-details' organisationSearchString}} <button disabled={{unless organisationSearchStringValid true}}>Search</button>{{/link-to}}
-                    </div>
-                </form>
-
-
-                <form class="form form--authenticateGitHubAccessToken" {{!action 'authenticateGitHubAccessToken' on='submit'}}>
-                    <div class="form__label--container">
-                        <label for="gitHubAccessToken">GitHub API token</label>
-                    </div>
-                    <div class="form__input--container">
-                        {{validated-input value=gitHubAccessToken valid=gitHubAccessTokenValid validationType='token' placeholder="Enter your GitHub API token" type="text" required=true input-class="form-control"}}
-                        <button type="submit" disabled={{unless gitHubAccessTokenValid true}}>Submit</button>
-                    </div>
-                </form>
-
-
-                {{outlet}}
-
-        </fieldset>
-    </div>
-</section>
-
-
-
-
+{{footer-nav}}

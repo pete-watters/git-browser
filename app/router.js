@@ -14,9 +14,9 @@ Router.map(function() {
   // this.route('branches');
 
   this.route('login');
-  this.route('organisation', { path: 'organisation/:organisation_id' }, function() {});
+  this.route('organisations', { path: 'organisations/:organisation_id' }, function() {});
   this.route('repository', { path: '/repository/:id' });
-
+  this.route('page-not-found', { path: '/*wildcard' });
 });
 
 export default Router;

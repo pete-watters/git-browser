@@ -1,13 +1,6 @@
-import Model from 'ember-data/model';
-import attr from 'ember-data/attr';
-import { hasMany } from 'ember-data/relationships';
+import DS from 'ember-data';
+import GithubRepository from 'ember-data-github/models/github-organization';
 
-export default Model.extend({
-  fullName: attr(),
-  name: attr(),
-  language: attr(),
-  htmlURL: attr(),
-  private: attr(),
-  branches: hasMany('branch'),
-  showBranchDetail: attr('boolean', {defaultValue: false})
+export default DS.Model.extend(GithubRepository,{
+
 });

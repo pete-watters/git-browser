@@ -1,1 +1,53 @@
+{{model.organisation.name}}
+{{model.organisation.avatar_url}}
+{{model.organisation.created_at}}
+{{model.organisation.updated_at}}
+{{model.organisation.public_repos}}
+
+
+
+<hr>
+
+{{#each model.repositories as |repository|}}
+  {{repository.fullName}}
+  {{repository.name}}
+  {{repository.language}}
+  {{repository.description}}
+  {{repository.private}}
+  {{repository.createdAt}}
+  {{repository.createdAt}}
+  {{repository.updatedAt}}
+  {{repository.pushedAt}}
+  {{repository.createdAt}}
+  {{repository.createdAt}}
+  {{repository.createdAt}}
+{{/each}}
+
+
+
+
+{{#each model.repositories as |repo|}}
+  {{#if (compare repo.private '===' repositoryPrivateFlag)}}
+
+    {{#unless repositoryLanguageSearchString}}
+      {{repository-details repository=repo}}
+    {{else}}
+      {{#if (compare repo.language '===' repositoryLanguageSearchString)}}
+        {{repository-details repository=repo}}
+      {{/if}}
+    {{/unless}}
+
+  {{/if}}
+
+
+  {{#if repo.showBranchDetail}}
+    {{branch-details repositoryFullName=repo.fullName}}
+  {{/if}}
+
+{{/each}}
+
+{{side-image header="Login" paragraph="Please login to get started" imageURL="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png"}}
+{{!search-filters}}
+{{!repository-list}}
+
 {{outlet}}

@@ -1,9 +1,3 @@
-import Model from 'ember-data/model';
-import attr from 'ember-data/attr';
-import { belongsTo } from 'ember-data/relationships';
+import githubBranch from 'ember-data-github/models/github-branch';
 
-export default Model.extend({
-    name: attr(),
-    lastCommit: attr(),
-    repository: belongsTo('repository')
-});
+export default githubBranch;

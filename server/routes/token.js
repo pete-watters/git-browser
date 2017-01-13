@@ -4,9 +4,11 @@ module.exports = function(app) {
 
     if (req.body.grant_type === 'password') {
 
-      console.log('here we are now' + req.body.grant_type + JSON.stringify(req.body));
-      if (req.body.username === 'letme') { // fixme add token validation here
-        res.send({ access_token: '26fff6cc69a115716d980d9909a03c82b280a761' });
+      console.log('Adding your token: ' +  JSON.stringify(req.body));
+      // Double Check token syntax
+      var regExPattern = new RegExp("^([a-z0-9]{40})$"); // verify alphanumeric and at least 40 long
+      if (regExPattern.test(req.body.username)) {
+        res.send({ access_token: req.body.username });
       } else {
         res.status(400).send({ error: 'invalid_grant' });
       }

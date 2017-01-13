@@ -1,5 +1,3 @@
-import DS from 'ember-data';
+import githubOrganization from 'ember-data-github/models/github-organization';
 
-export default DS.Model.extend({
-  
-});
+export default githubOrganization;
