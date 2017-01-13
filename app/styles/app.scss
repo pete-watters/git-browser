@@ -15,6 +15,7 @@ $font-stack-system: Helvetica, sans-serif; // needed to get around issues with b
 @import "refills/sideImage";
 @import "refills/footerNav";
 @import "refills/hero";
+@import "refills/comment";
 
 body {
   @include outer-container;

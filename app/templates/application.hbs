@@ -3,10 +3,10 @@
 
 {{#if session.isAuthenticated}}
   {{organisation-search}}
-{{/if}}
-{{#unless session.isAuthenticated}}
+{{else}}
+
   {{side-image header="Login" paragraph="Please login to get started" imageURL="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png"}}
-{{/unless}}
+{{/if}}
 
 {{outlet}}
 
