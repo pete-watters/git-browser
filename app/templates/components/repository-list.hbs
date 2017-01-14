@@ -5,6 +5,21 @@
       {{/each}}
     </div>
     <div class="vertical-tab-content-container">
+
+
+        {{#if (compare repo.private '===' repositoryPrivateFlag)}}
+
+          {{#unless repositoryLanguageSearchString}}
+            {{repository-details repository=repo}}
+          {{else}}
+            {{#if (compare repo.language '===' repositoryLanguageSearchString)}}
+              {{repository-details repository=repo}}
+            {{/if}}
+          {{/unless}}
+
+        {{/if}}
+
+
       {{#each inputModel as |repository|}}
           <div id="{{repository.name}}" class="js-vertical-tab-content vertical-tab-content">
               <div class="comment">

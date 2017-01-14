@@ -1,8 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-    tagName: 'tr',
-    classNames: ['tr--branch-detail-results'],
     repositoryFullName: null,
     branchDetails: function() {
 
@@ -11,14 +9,13 @@ export default Ember.Component.extend({
 
         Ember.$.ajax({
             url: branchesURL,
-            headers: { Authorization: "token " + window.localStorage.getItem('gitHubAccessToken') + " " },
             async: false,
             type: 'GET',
             success: function(data) {
                 result = data;
             },
             error: (error) => {
-                console.log(error);
+              this.transitionTo('/page-not-found?error=' + this.rejectHandler(error));
             }
         });
         return result;

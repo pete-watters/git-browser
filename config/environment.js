@@ -23,7 +23,7 @@ module.exports = function(environment) {
       'script-src': "'self' 'unsafe-inline' 'unsafe-eval' api.github.com",
       'font-src': "'self' data: api.github.com",
       'connect-src': "'self' api.github.com",
-      'img-src': "'self' www.facebook.com api.github.com",
+      'img-src': "'self' www.facebook.com api.github.com avatars.githubusercontent.com encrypted-tbn1.gstatic.com",
       'style-src': "'self' 'unsafe-inline' api.github.com",
       'frame-src': "api.github.com"
     },

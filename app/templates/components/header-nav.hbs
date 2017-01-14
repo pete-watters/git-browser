@@ -4,7 +4,7 @@
         <nav role="navigation">
             <ul id="js-navigation-menu" class="navigation-menu show">
                 <li class="nav-link">{{#link-to 'index'}}Home{{/link-to}}</li>
-                <li class="nav-link">
+                <li id="container--login" class="nav-link">
                     {{#if session.isAuthenticated}}
                         <a id="logout" {{ action 'invalidateSession' }}>Logout</a>
                     {{else}}

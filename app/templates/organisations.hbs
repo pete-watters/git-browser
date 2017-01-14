@@ -13,17 +13,17 @@
   {{#if (compare repo.private '===' repositoryPrivateFlag)}}
 
     {{#unless repositoryLanguageSearchString}}
-      {{repository-details repository=repo}}
+      {{!repository-details repository=repo}}
     {{else}}
       {{#if (compare repo.language '===' repositoryLanguageSearchString)}}
-        {{repository-details repository=repo}}
+        {{!repository-details repository=repo}}
       {{/if}}
     {{/unless}}
 
   {{/if}}
 
-
-  {{#if repo.showBranchDetail}}
+  {{input type='checkbox' checked=showBranchDetail}}
+  {{#if showBranchDetail}}
     {{branch-details repositoryFullName=repo.fullName}}
   {{/if}}
 

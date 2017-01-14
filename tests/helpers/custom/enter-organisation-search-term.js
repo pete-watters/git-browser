@@ -1,9 +1,7 @@
-import apiKey from 'git-browser/tests/helpers/custom/api-key';
+import loginApp from 'git-browser/tests/helpers/custom/login';
 
 export default function enterOrganisationSearchTerm(searchTerm) {
-  visit('/');
-  fillIn('.form__input--container input', apiKey);
-  click('.form__input--container button');
+  loginApp();
   fillIn('.form--organisationSearch .form__input--container input', searchTerm);
 }
 

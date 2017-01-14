@@ -7,12 +7,6 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  // this.route('organisation-details', { path: '/organisation-details/:organisation_name' });
-  // this.route('page-not-found', { path: '/*wildcard' });
-  // this.route('organisations');
-  // this.route('repositorys');
-  // this.route('branches');
-
   this.route('login');
   this.route('organisations', { path: 'organisations/:organisation_id' }, function() {});
   this.route('repository', { path: '/repository/:id' });
