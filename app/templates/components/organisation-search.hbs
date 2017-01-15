@@ -1,0 +1,16 @@
+<section class="container">
+    <div class="wrapper">
+        <fieldset>
+            <form class="form form--organisationSearch" {{action 'searchForOrganisation' on='submit'}}>
+                <div class="form__label--container" >
+                    <label class="form__label" for="organisationSearchString">GitHub Organisation</label>
+                </div>
+                <div class="form__input--container">
+                  {{validated-input value=organisationSearchString valid=organisationSearchStringValid validationType='text' placeholder="Enter GitHub organisation name" type="text" required=true input-class="form-control"}}
+                  {{#link-to 'organisations' organisationSearchString}} <button disabled={{unless organisationSearchStringValid true}}>Search</button>{{/link-to}}
+                </div>
+            </form>
+        </fieldset>
+    </div>
+</section>
+{{yield}}

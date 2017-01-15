@@ -1,0 +1,17 @@
+<section class="container">
+    <div class="wrapper">
+        <fieldset>
+            <h2>Login</h2>
+            <p>Please enter your github access token below</p>
+          <form class="form form--authenticateGitHubAccessToken" {{!action 'authenticateGitHubAccessToken' on='submit'}}>
+              <div class="form__label--container">
+                  <label for="gitHubAccessToken">GitHub API token</label>
+              </div>
+              <div class="form__input--container">
+                {{validated-input value=githubToken valid=gitHubAccessTokenValid validationType='token' placeholder="Enter your GitHub API token" type="text" required=true input-class="form-control"}}
+                  <button type="submit" {{action "authenticate" githubToken}} disabled={{unless gitHubAccessTokenValid true}}>Submit</button>
+              </div>
+          </form>
+        </fieldset>
+    </div>
+</section>

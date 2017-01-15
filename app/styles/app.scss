@@ -9,6 +9,13 @@ $font-stack-system: Helvetica, sans-serif; // needed to get around issues with b
 @import "repositoryDetails";
 @import "organisationFilter";
 @import "organisationDetails";
+@import "refills/headerNav";
+@import "refills/searchFilters";
+@import "refills/repositoryList";
+@import "refills/sideImage";
+@import "refills/footerNav";
+@import "refills/hero";
+@import "refills/comment";
 
 body {
   @include outer-container;
@@ -46,4 +53,12 @@ fieldset {
 // customise test output
 #ember-testing-container{
   display: none;
+}
+
+.navigation-wrapper{
+  margin: 0 2%;
+}
+
+.images-wrapper{
+  background-position: inherit;
 }

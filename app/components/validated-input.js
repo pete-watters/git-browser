@@ -33,11 +33,6 @@ export default Ember.Component.extend({
         }
         this.set('valid', isValid);
 
-    }.observes('value'),
-    actions:{
-        authenticateGitHubAccessToken: function () {
-            this.sendAction('authenticateGitHubAccessToken');
-        }
-}
+    }.observes('value')
 });
 
