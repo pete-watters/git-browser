@@ -4,7 +4,7 @@ import searchForOrganisation from 'git-browser/tests/helpers/custom/search-for-o
 
 moduleForAcceptance('Acceptance | search for organisation');
 
-test('visiting /search-for-organisation', function(assert) {
+test('verify search for ember', function(assert) {
   searchForOrganisation();
 
   andThen(function() {
