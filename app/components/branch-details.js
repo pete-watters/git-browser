@@ -1,11 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-    repositoryFullName: null,
     branchDetails: function() {
 
         let result;
-        const branchesURL = 'https://api.github.com/repos/' + 'emberjs' +'/branches';
+        const branchesURL = 'https://api.github.com/repos/' + this.get('repositoryFullName') +'/branches';
         console.log(branchesURL);
         Ember.$.ajax({
             url: branchesURL,
