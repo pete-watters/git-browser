@@ -1,3 +1,3 @@
-// const apiKey = 'INSERT-YOUR-KEY';
+const apiKey = 'INSERT-YOUR-KEY';
 
 export default apiKey;
