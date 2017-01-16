@@ -2,6 +2,7 @@ import enterOrganisationSearchTerm from 'git-browser/tests/helpers/custom/enter-
 
 export default function searchForOrganisation() {
   enterOrganisationSearchTerm('emberjs');
-  click('.form--organisationSearch .form__input--container button');
+  // click hidden button for tst purposes - was getting messy with un-focusing
+  click('#qunit-dummy-search');
 }
 

@@ -8,8 +8,7 @@ test('verify search for ember', function(assert) {
   searchForOrganisation();
 
   andThen(function() {
-    assert.equal(find('fieldset strong').text(), 'Ember.js');
-    assert.equal(find('fieldset img').attr('src'), 'https://avatars.githubusercontent.com/u/1253363?v=3');
-    assert.equal(find('fieldset table tr').length, 31);
+    assert.equal(find('.side-image-content h4').text(), 'Ember.js');
+    assert.equal(find('#1791812 .comment-content h1').text(), 'starter-kit'); // hardcoded ID of the first ember repo
   });
 });

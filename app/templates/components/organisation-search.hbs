@@ -8,6 +8,7 @@
                 <div class="form__input--container">
                   {{validated-input value=organisationSearchString valid=organisationSearchStringValid validationType='text' placeholder="Enter GitHub organisation name" type="text" required=true input-class="form-control"}}
                   {{#link-to 'organisations' organisationSearchString}} <button disabled={{unless organisationSearchStringValid true}}>Search</button>{{/link-to}}
+                  {{#link-to 'organisations' organisationSearchString}} <button id ="qunit-dummy-search" style="display:none">Search</button>{{/link-to}}
                 </div>
             </form>
         </fieldset>
