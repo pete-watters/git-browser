@@ -3,7 +3,6 @@ import Ember from 'ember';
 export default Ember.Component.extend({
     filteredRepositoryList: function() {
       var filteredModel;
-      console.log('filtered');
       if(this.get('repositoryLanguageSearchString') && this.get('repositoryPrivateFlag')){
 
         filteredModel = this.get('inputModel').filterBy('language', this.get('repositoryLanguageSearchString'));

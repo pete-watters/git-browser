@@ -18,7 +18,6 @@ test('it renders', function(assert) {
   // Template block usage:
   this.render(hbs`
     {{#repository-list}}
-      template block text
     {{/repository-list}}
   `);
 
