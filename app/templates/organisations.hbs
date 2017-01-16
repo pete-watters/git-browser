@@ -2,32 +2,8 @@
 <hr>
 
 
-
-{{search-filters}}
-
 {{repository-list inputModel=model.repositories}}
 
-
-
-{{#each model.repositories as |repo|}}
-  {{#if (compare repo.private '===' repositoryPrivateFlag)}}
-
-    {{#unless repositoryLanguageSearchString}}
-      {{!repository-details repository=repo}}
-    {{else}}
-      {{#if (compare repo.language '===' repositoryLanguageSearchString)}}
-        {{!repository-details repository=repo}}
-      {{/if}}
-    {{/unless}}
-
-  {{/if}}
-
-  {{input type='checkbox' checked=showBranchDetail}}
-  {{#if showBranchDetail}}
-    {{branch-details repositoryFullName=repo.fullName}}
-  {{/if}}
-
-{{/each}}
 
 
 {{outlet}}

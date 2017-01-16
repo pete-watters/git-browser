@@ -1,27 +1,29 @@
+
+<div class="search-tools">
+    <div class="filters">
+        <div class="filter">
+            <label for="repositoryLanguageSearchString">Language</label>
+            <div>
+              {{input id='repositoryLanguageSearchString' type='text' placeholder='Enter repository language' value=repositoryLanguageSearchString}}
+            </div>
+        </div>
+        <div class="filter">
+            <label for="repositoryLanguageSearchString">Private?</label>
+          {{input id='repositoryPrivateFlag' type='checkbox' checked=repositoryPrivateFlag}}
+        </div>
+    </div>
+</div>
+
 <div class="vertical-tabs-container">
     <div class="vertical-tabs">
-      {{#each inputModel as |repository index|}}
-               <a href="javascript:void(0)" id="repository-list-{{index}}" class="js-vertical-tab vertical-tab" rel="{{repository.name}}">{{repository.name}}</a>
-      {{/each}}
+      {{#each filteredRepositoryList as |repository index|}}
+                <a href="javascript:void(0)" id="repository-list-{{index}}" class="js-vertical-tab vertical-tab" rel="{{repository.id}}">{{repository.name}}</a>
+
+       {{/each}}
     </div>
     <div class="vertical-tab-content-container">
-
-
-        {{#if (compare repo.private '===' repositoryPrivateFlag)}}
-
-          {{#unless repositoryLanguageSearchString}}
-            {{repository-details repository=repo}}
-          {{else}}
-            {{#if (compare repo.language '===' repositoryLanguageSearchString)}}
-              {{repository-details repository=repo}}
-            {{/if}}
-          {{/unless}}
-
-        {{/if}}
-
-
-      {{#each inputModel as |repository|}}
-          <div id="{{repository.name}}" class="js-vertical-tab-content vertical-tab-content">
+      {{#each filteredRepositoryList as |repository|}}
+          <div id="{{repository.id}}" class="js-vertical-tab-content vertical-tab-content">
               <div class="comment">
                   <div class="comment-image">
                       <img src="{{repository.owner.avatar_url}}">
@@ -44,6 +46,7 @@
                   </div>
               </div>
           </div>
+
       {{/each}}
     </div>
 </div>
