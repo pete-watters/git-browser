@@ -5,8 +5,8 @@ export default Ember.Component.extend({
     branchDetails: function() {
 
         let result;
-        const branchesURL = 'https://api.github.com/repos/' + this.get('repositoryFullName') +'/branches';
-
+        const branchesURL = 'https://api.github.com/repos/' + 'emberjs' +'/branches';
+        console.log(branchesURL);
         Ember.$.ajax({
             url: branchesURL,
             async: false,
