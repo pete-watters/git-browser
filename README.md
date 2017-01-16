@@ -1,20 +1,12 @@
 # git-browser
 
-This is a simple Ember app that connects to the GitHub API and allows you to search for organisations. 
-
-You can view organisations and filter their repo based on criteria. 
+This is a simple Ember app that connects to the GitHub API and allows you to search for organisations. You can view organisations and filter their repo based on criteria. 
 
 ## Development notes
-* this app uses the git-flow branching strategy (because it's awesome!)
-* 'app/adapters/application.js' points to the github API host. Github is not JSON API compliant so the REST adapter is used.
-* unsuccessful attempts were made to try and use 'ember-cli-mocha' - they can be seen on the branch 'feature/ember-mocha' 
-  
-## Known Flaws
-* Model population: I am not happy with how I am loading the branch information. It really should be a nested model of repositories but I failed to get it to work in an adequate timeline. This is something I will continue to learn about
-* Error Handling: I am not handling invalid API responses at all and this is something that is severely lacking here
-* qUnit: I am not overly used to qUnit so my tests could be better, particularly for async activity although I am not sure if qUnit is a great setup for reliable tests
-* sessionAuthentication: I am using a localStorage key to store the gitAPI key. This would be better using ember-simple-auth
-* ember-data-github: my app would most likely be better using this however I struggled to figure out how to configure it and cut my losses. I guess if someone told me I would have a lightbulb moment!
+* this app uses the git-flow branching strategy (because it's awesome!) 
+* sessionAuthentication: This is handled using ember-simple-auth
+* ember-data-github: This add on is used as a base from which serializers, adapters and models are extended
+* styling: a combination of Neat /Bourbon / Bitters / Refills are used to improve the asthetics of the app
 
 ## Installation - to run
 
