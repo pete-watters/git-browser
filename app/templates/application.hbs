@@ -1,11 +1,12 @@
 <h1 id="main-header">Ember - GitHub Browser</h1>
 {{header-nav}}
-{{outlet}}
 
 {{#if session.isAuthenticated}}
   {{organisation-search}}
+  {{outlet}}
 {{else}}
 
+  {{outlet}}
   {{side-image header="Welcome" paragraph="Please login to get started" imageURL="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png"}}
 
 {{/if}}
