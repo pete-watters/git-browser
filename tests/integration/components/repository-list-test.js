@@ -13,7 +13,7 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{repository-list}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  assert.equal(this.$().text().replace(/\s/g,''), 'LanguagePrivate?');
 
   // Template block usage:
   this.render(hbs`
@@ -21,5 +21,5 @@ test('it renders', function(assert) {
     {{/repository-list}}
   `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$().text().replace(/\s/g,''), 'LanguagePrivate?');
 });
