@@ -6,7 +6,7 @@ This is a simple Ember app that connects to the GitHub API and allows you to sea
 * this app uses the git-flow branching strategy (because it's awesome!) 
 * sessionAuthentication: This is handled using ember-simple-auth
 * ember-data-github: This add on is used as a base from which serializers, adapters and models are extended
-* styling: a combination of Neat /Bourbon / Bitters / Refills are used to improve the asthetics of the app
+* styling: a combination of Neat /Bourbon / Bitters / Refills are used to improve the UI and asthetics of the app
 
 ## Installation - to run
 
@@ -20,6 +20,10 @@ This is a simple Ember app that connects to the GitHub API and allows you to sea
 * `ember serve`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
+## To view tests
+* Specify your API key in `tests/helpers/custom/api-key.js` replacing `INSERT-YOUR-KEY`
+* `ember serve`
+* Visit your test results at [http://localhost:4200/tests](http://localhost:4200/tests).
 
 ### Testing
 
@@ -29,13 +33,10 @@ This is a simple Ember app that connects to the GitHub API and allows you to sea
  For UI testing I believe you really can't beat Selenium which uses actual browsers.
  
 ### GIT personal access token
-* The GitHub access token is required by the tests. There is a helper in 'tests/helpers/custom/api-key.js' you can specify it in. 
+* The GitHub access token is required by the tests. There is a helper in `tests/helpers/custom/api-key.js` you can specify it in. 
 * I have set this to 'INSERT-YOUR-KEY' as if I commit mine it will become invalid. 
 * You need to update this for the tests to pass
-
-## To run tests
-* `ember serve`
-* Visit your test results at [http://localhost:4200/tests](http://localhost:4200/tests).
+* including it int he repo itself invalidates the key
 
 
 ### Building
