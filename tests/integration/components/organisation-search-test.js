@@ -13,7 +13,7 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{organisation-search}}`);
 
-  assert.equal(this.$().text().replace(/\s/g,''), 'GitHubOrganisationSearch');
+  assert.equal(this.$().text().replace(/\s/g,''), 'GitHubOrganisationSearchSearch');
 
   // Template block usage:
   this.render(hbs`
@@ -21,5 +21,5 @@ test('it renders', function(assert) {
     {{/organisation-search}}
   `);
 
-  assert.equal(this.$().text().replace(/\s/g,''), 'GitHubOrganisationSearch');
+  assert.equal(this.$().text().replace(/\s/g,''), 'GitHubOrganisationSearchSearch');
 });
